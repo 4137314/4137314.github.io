@@ -1,0 +1,27 @@
+name: Compile LaTeX CV
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Compile LaTeX
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: asset/cv/main.tex
+          # Usa xelatex se hai impostato font particolari, altrimenti pdflatex
+          compiler: xelatex 
+          working_directory: asset/cv/
+
+      - name: Move PDF to assets
+        run: |
+          mkdir -p asset/cv/
+          mv asset/cv/main.pdf asset/cv/cv_mattia_fait.pdf
+
+      - name: Upload PDF to Pages branch
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "docs: update compiled CV pdf"
+          file_pattern: 'asset/cv/*.pdf'

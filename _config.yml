@@ -1,8 +1,32 @@
+# Site Settings
 title: 4137314 Portfolio
 email: mattia.fait.science@gmail.com
-description: Research & Development in Formal Systems
+description: Research & Development in Formal Systems | Lead Architect of holos/
 baseurl: "" 
 url: "https://4137314.github.io"
+
+# Build Settings
 markdown: kramdown
-theme: minima # Opzionale, ma utile come fallback
-exclude: [asset/cv/config, asset/cv/src] # Non compilare i sorgenti LaTeX come pagine
+highlighter: rouge
+theme: minima
+
+# File Management
+include:
+  - asset/cv/cv_mattia_fait.pdf
+
+exclude:
+  - .github/            # Cartella delle GitHub Actions
+  - asset/cv/config/    # Sorgenti LaTeX
+  - asset/cv/src/       # Sorgenti LaTeX
+  - asset/cv/*.tex      # File sorgente principale
+  - asset/cv/*.aux      # File temporanei LaTeX
+  - asset/cv/*.log
+  - asset/cv/*.out
+  - asset/cv/*.toc
+  - README.md
+  - LICENSE
+
+# Plugins (Opzionali, utili per SEO e sitemap)
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag

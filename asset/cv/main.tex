@@ -1,11 +1,18 @@
-\documentclass{my-cv-class} % Es. moderncv o article
-\input{config.tex} % Font, pacchetti e definizioni macro
+\documentclass[10pt, a4paper]{article}
+
+% Carica i pacchetti e lo stile
+\input{config/src/package.tex}
+\input{config/src/style.tex}
+\input{config/config.tex}
 
 \begin{document}
-    \input{sections/header.tex}
-    \input{sections/education.tex}
-    \input{sections/skills.tex}
-    \input{sections/projects.tex}
-    \input{sections/experience.tex}
-    \input{sections/languages.tex}
+    \input{src/header.tex}
+    
+    \vspace{1em}
+    
+    \input{src/education.tex}
+    \input{src/projects.tex} % Focus sui core projects come holos/
+    \input{src/experience.tex}
+    \input{src/skills.tex}
+    \input{src/languages.tex}
 \end{document}

@@ -1,0 +1,23 @@
+% Definizione Colori (ispirati allo stile Slate/Modern)
+\definecolor{primary}{HTML}{1A1E23}    % Grigio Ardesia Scuro
+\definecolor{accent}{HTML}{2E5A88}     % Blu Accademico (più scuro del sito per stampa)
+\definecolor{links}{HTML}{0056b3}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=links,
+    urlcolor=links,
+}
+
+% Formattazione Sezioni
+\titleformat{\section}
+  {\color{accent}\scshape\Large\bfseries}{}{0em}{}[\titlerule]
+
+\titlespacing{\section}{0pt}{12pt}{8pt}
+
+% Macro per i progetti o esperienze
+\newcommand{\cvitem}[4]{
+    \noindent \textbf{#1} \hfill \textit{#2} \\
+    \noindent \textit{#3} \hfill #4 \\
+    \vspace{-0.5em}
+}
