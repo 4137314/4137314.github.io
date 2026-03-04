@@ -1,55 +1,95 @@
 :root {
-    --hacker-green: #00ff41;
-    --dark-bg: #050505;
-    --scanline-color: rgba(0, 255, 65, 0.05);
+    /* Palette: Slate & Pastel (Ingegnere/Moderno) */
+    --bg-deep: #1a1e23;          /* Grigio ardesia profondo */
+    --panel-bg: #232830;        /* Grigio pannello leggermente più chiaro */
+    --text-primary: #d1d5db;    /* Grigio chiaro pastello (alta leggibilità) */
+    --accent-blue: #89ddff;     /* Blu ghiaccio pastello (focus) */
+    --accent-gold: #ffcb6b;     /* Ambra pastello (warning/prompt) */
+    --border-soft: rgba(137, 221, 255, 0.15);
+    --font-mono: 'JetBrains Mono', 'Fira Code', 'Roboto Mono', monospace;
 }
 
 body {
-    background-color: var(--dark-bg);
-    color: var(--hacker-green);
-    font-family: 'Courier New', Courier, monospace;
+    background-color: var(--bg-deep);
+    color: var(--text-primary);
+    font-family: var(--font-mono);
+    font-size: 15px;
     margin: 0;
-    line-height: 1.6;
+    line-height: 1.8;
+    -webkit-font-smoothing: antialiased;
 }
 
+/* Effetto Scanline: Molto più sottile e meno invasivo */
 body::before {
-    content: " ";
+    content: "";
     position: fixed;
     top: 0; left: 0; width: 100%; height: 100%;
-    background: repeating-linear-gradient(0deg, transparent 0px, transparent 1px, var(--scanline-color) 2px);
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(255, 255, 255, 0.02) 50%);
+    background-size: 100% 3px;
     pointer-events: none;
-    z-index: 100;
+    z-index: 1000;
 }
 
 .container {
-    max-width: 900px;
+    max-width: 850px;
     margin: 0 auto;
-    padding: 2rem;
+    padding: 3rem 1.5rem;
 }
 
+/* Sezioni: Design pulito da scheda tecnica */
 header, section, footer {
-    margin-bottom: 3rem;
-    border: 1px solid rgba(0, 255, 65, 0.2);
-    padding: 1.5rem;
-    position: relative;
+    margin-bottom: 2rem;
+    background: var(--panel-bg);
+    border: 1px solid var(--border-soft);
+    border-radius: 4px; /* Angoli leggermente smussati, più moderno */
+    padding: 2rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
+header {
+    border-top: 3px solid var(--accent-blue);
+}
+
+/* Card per holos/: Aspetto da "modulo elettronico" */
 .card {
-    border-left: 3px solid var(--hacker-green);
-    background: rgba(0, 255, 65, 0.03);
-    padding: 1rem;
-    margin: 1rem 0;
+    border-left: 2px solid var(--accent-gold);
+    background: rgba(255, 203, 107, 0.03);
+    padding: 1.2rem;
+    margin: 1.5rem 0;
+    color: #b0bec5;
 }
 
+/* Link: Eleganti e non invasivi */
 a {
-    color: var(--hacker-green);
+    color: var(--accent-blue);
     text-decoration: none;
-    font-weight: bold;
+    padding: 2px 4px;
+    border-radius: 2px;
+    transition: all 0.2s ease;
 }
 
 a:hover {
-    background: var(--hacker-green);
-    color: var(--dark-bg);
+    background: rgba(137, 221, 255, 0.1);
+    color: #fff;
+    box-shadow: 0 0 8px rgba(137, 221, 255, 0.3);
 }
 
-.prompt { color: #fff; margin-right: 10px; }
+/* Prompt: Stile terminale accademico */
+.prompt { 
+    color: var(--accent-gold); 
+    font-weight: 600;
+}
+
+.prompt::before {
+    content: "guest@science:~$ "; /* Personalizzabile */
+    opacity: 0.7;
+}
+
+/* Scrollbar minimale */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--bg-deep); }
+::-webkit-scrollbar-thumb { 
+    background: #37474f; 
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover { background: var(--accent-blue); }
