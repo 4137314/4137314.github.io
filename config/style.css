@@ -1,0 +1,55 @@
+:root {
+    --hacker-green: #00ff41;
+    --dark-bg: #050505;
+    --scanline-color: rgba(0, 255, 65, 0.05);
+}
+
+body {
+    background-color: var(--dark-bg);
+    color: var(--hacker-green);
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0;
+    line-height: 1.6;
+}
+
+body::before {
+    content: " ";
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: repeating-linear-gradient(0deg, transparent 0px, transparent 1px, var(--scanline-color) 2px);
+    pointer-events: none;
+    z-index: 100;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+header, section, footer {
+    margin-bottom: 3rem;
+    border: 1px solid rgba(0, 255, 65, 0.2);
+    padding: 1.5rem;
+    position: relative;
+}
+
+.card {
+    border-left: 3px solid var(--hacker-green);
+    background: rgba(0, 255, 65, 0.03);
+    padding: 1rem;
+    margin: 1rem 0;
+}
+
+a {
+    color: var(--hacker-green);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    background: var(--hacker-green);
+    color: var(--dark-bg);
+}
+
+.prompt { color: #fff; margin-right: 10px; }
