@@ -1,43 +1,283 @@
----
-layout: null
----
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mattia Fait | Developer</title>
-    <link rel="stylesheet" href="{{ '/config/style.css' | relative_url }}">
+    <title>4137314 // RESEARCH_NODE</title>
+    <style>
+        :root {
+            --bg-color: #0d1117;
+            --grid-color: #161b22;
+            --text-primary: #c9d1d9;
+            --accent: #58a6ff;
+            --dim: #484f58;
+            --success: #3fb950;
+            --warning: #d29922;
+            --font-mono: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
+        }
+
+        * { box-sizing: border-box; }
+        
+        body {
+            background-color: var(--bg-color);
+            background-image: 
+                linear-gradient(var(--grid-color) 1px, transparent 1px),
+                linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
+            background-size: 30px 30px;
+            color: var(--text-primary);
+            font-family: var(--font-mono);
+            margin: 0;
+            padding: 20px;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Effetto Scanline CRT */
+        body::after {
+            content: " ";
+            display: block;
+            position: fixed;
+            top: 0; left: 0; bottom: 0; right: 0;
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.1) 50%), 
+                        linear-gradient(90deg, rgba(255, 0, 0, 0.03), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.03));
+            z-index: 1000;
+            pointer-events: none;
+            background-size: 100% 4px, 3px 100%;
+        }
+
+        header {
+            border: 2px solid var(--accent);
+            padding: 20px;
+            margin-bottom: 20px;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            background: rgba(13, 17, 23, 0.95);
+            box-shadow: 0 0 15px rgba(88, 166, 255, 0.1);
+        }
+
+        .sys-info {
+            font-size: 0.75rem;
+            color: var(--dim);
+            text-align: right;
+            border-left: 1px solid var(--dim);
+            padding-left: 20px;
+            line-height: 1.5;
+        }
+
+        h1 { margin: 0; font-size: 1.6rem; color: var(--accent); letter-spacing: -1px; text-transform: uppercase; }
+
+        .dashboard {
+            display: grid;
+            grid-template-columns: 320px 1fr;
+            gap: 20px;
+        }
+
+        @media (max-width: 850px) {
+            .dashboard { grid-template-columns: 1fr; }
+        }
+
+        section {
+            border: 1px solid var(--dim);
+            background: rgba(22, 27, 34, 0.7);
+            padding: 15px;
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        section h2 {
+            font-size: 0.9rem;
+            background: var(--accent);
+            color: var(--bg-color);
+            display: inline-block;
+            padding: 2px 10px;
+            margin: -25px 0 15px 0;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.8rem;
+            margin: 5px 0;
+        }
+
+        th, td {
+            border: 1px solid var(--grid-color);
+            padding: 8px;
+            text-align: left;
+        }
+
+        th { color: var(--accent); font-weight: normal; background: rgba(88, 166, 255, 0.05); }
+
+        .project-item {
+            border-left: 3px solid var(--dim);
+            padding: 10px 15px;
+            margin-bottom: 15px;
+            background: rgba(13, 17, 23, 0.3);
+            transition: border-left 0.3s;
+        }
+
+        .project-item:hover { border-left: 3px solid var(--accent); }
+
+        .tag {
+            font-size: 0.65rem;
+            border: 1px solid var(--success);
+            color: var(--success);
+            padding: 1px 5px;
+            margin-right: 5px;
+            text-transform: uppercase;
+        }
+
+        .tag.warning { border-color: var(--warning); color: var(--warning); }
+
+        footer {
+            margin-top: 10px;
+            padding: 15px;
+            border-top: 1px solid var(--dim);
+            font-size: 0.75rem;
+            display: flex;
+            justify-content: space-between;
+            color: var(--dim);
+        }
+
+        .blink { animation: blinker 1.2s linear infinite; color: var(--accent); }
+        @keyframes blinker { 50% { opacity: 0; } }
+
+        a { color: var(--accent); text-decoration: none; transition: 0.2s; }
+        a:hover { background: var(--accent); color: var(--bg-color); }
+
+        .log-line { font-size: 0.75rem; color: var(--dim); margin-bottom: 4px; border-left: 2px solid transparent; padding-left: 8px; }
+        .log-line:hover { border-left: 2px solid var(--dim); color: var(--text-primary); }
+
+    </style>
 </head>
 <body>
-    <div class="container">
-        {% include_relative src/header.html %}
-        
-        <main>
-            {% include_relative src/projects.html %}
-        </main>
 
-        {% include_relative src/footer.html %}
+    <header>
+        <div>
+            <h1>NODE_LOG :: ID_4137314</h1>
+            <p style="font-size: 0.85rem; margin: 8px 0;">
+                <span class="prompt">❯</span> STATUS: <span class="blink" style="color: var(--success)">ACTIVE</span><br>
+                <span class="prompt">❯</span> DOMAIN: Electronic_Engineering // Formal_Systems
+            </p>
+        </div>
+        <div class="sys-info">
+            [ LOC: 46.067°N 11.121°E ]<br>
+            [ OS: NixOS 24.11 / Holos_Core ]<br>
+            [ KERNEL: Deterministic_Logic_v4 ]<br>
+            [ TIME_REF: 2026-03-11T22:40:00Z ]
+        </div>
+    </header>
+
+    <div class="dashboard">
+        <aside>
+            <section>
+                <h2>01_ABSTRACT</h2>
+                <p style="font-size: 0.85rem; line-height: 1.5; margin: 0;">
+                    Sviluppo di infrastrutture deterministiche e documentazione formale. 
+                    Ricerca focalizzata sulla convergenza tra Lean 4 e progettazione hardware rigorosa.
+                </p>
+            </section>
+
+            <section>
+                <h2>02_TAXONOMY</h2>
+                <table>
+                    <tr><th>LOGIC</th><td>Lean 4, Metaprogramming</td></tr>
+                    <tr><th>HW</th><td>VHDL, SystemVerilog, FPGA</td></tr>
+                    <tr><th>SYSTEMS</th><td>NixOS, Linux, Docker</td></tr>
+                    <tr><th>DEV</th><td>C, C++, Python, Neovim</td></tr>
+                </table>
+            </section>
+
+            <section style="border-color: var(--accent);">
+                <h2>05_RESOURCES</h2>
+                <table>
+                    <tr>
+                        <th>CURRICULUM</th>
+                        <td><a href="asset/cv/cv_mattia_fait.pdf" target="_blank" style="font-weight: bold;">[ GET_PDF ]</a></td>
+                    </tr>
+                    <tr>
+                        <th>GPG_ID</th>
+                        <td><code style="font-size: 0.7rem;">0x4137314_VERIFIED</code></td>
+                    </tr>
+                </table>
+            </section>
+        </aside>
+
+        <main>
+            <section>
+                <h2>03_ACTIVE_PROJECTS</h2>
+                
+                <div class="project-item">
+                    <strong>[doc]</strong> <span class="tag">FORMAL_VERIFIED</span>
+                    <p style="font-size: 0.8rem; color: var(--dim); margin-top: 5px;">
+                        Motore di documentazione per Lean 4. Genera output scientifici (LaTeX) partendo da prove formali.
+                        <br>❯ <a href="https://github.com/4137314/doc" target="_blank">repo_access</a>
+                    </p>
+                </div>
+
+                <div class="project-item">
+                    <strong>[holos/]</strong> <span class="tag">INFRASTRUCTURE</span>
+                    <p style="font-size: 0.8rem; color: var(--dim); margin-top: 5px;">
+                        Gestione dichiarativa multi-host tramite NixOS Flakes. Focus su riproducibilità totale e P2P mesh networking.
+                        <br>❯ <a href="https://github.com/4137314/holos" target="_blank">config_access</a>
+                    </p>
+                </div>
+
+                <div class="project-item">
+                    <strong>[archiso]</strong> <span class="tag warning">EXPERIMENTAL</span>
+                    <p style="font-size: 0.8rem; color: var(--dim); margin-top: 5px;">
+                        Toolkit per la generazione di ISO Arch Linux customizzate per la sicurezza e la verifica formale.
+                    </p>
+                </div>
+            </section>
+
+            <section>
+                <h2>04_SYSTEM_LOGS</h2>
+                <div style="font-family: 'Courier New', monospace; background: rgba(0,0,0,0.2); padding: 10px;">
+                    <div class="log-line">[2026-03-11 22:40] BOOT: System initialized in deterministic mode.</div>
+                    <div class="log-line">[2026-03-11 23:10] LEAN_PROC: Metadata verified for node_413.</div>
+                    <div class="log-line">[2026-03-11 23:15] NET: Tailscale tunnel established with 'Rack-01'.</div>
+                    <div class="log-line">[2026-03-11 23:18] INFO: Repository Holos/ synced with GitHub.</div>
+                    <div class="log-line"><span class="blink">█</span></div>
+                </div>
+            </section>
+        </main>
     </div>
 
+    <footer>
+        <div>
+            <span class="prompt">❯</span> <a href="mailto:mattia.fait.science@gmail.com">mail --send</a>
+            <span class="prompt" style="margin-left: 20px;">❯</span> <a href="https://github.com/4137314">gh --profile</a>
+        </div>
+        <div>
+            :: 4137314_RESEARCH_ARCHIVE // CXXVI ::
+        </div>
+    </footer>
+
     <script>
-        // Hacker Scrambler Effect
-        const letters = "01<>/-_[]{}*^!";
-        document.querySelectorAll("h1, h2").forEach(el => {
-            el.onmouseover = e => {
-                let iteration = 0;
-                const original = e.target.innerText;
-                const interval = setInterval(() => {
-                    e.target.innerText = original.split("").map((l, i) => {
-                        if(i < iteration) return original[i];
-                        return letters[Math.floor(Math.random() * letters.length)];
-                    }).join("");
-                    if(iteration >= original.length) clearInterval(interval);
-                    iteration += 1/3;
-                }, 30);
-            };
-            el.dataset.value = el.innerText;
+        // Hacker Scrambler per titoli e link
+        const chars = "01<>/-_[]{}*^!&%";
+        const scrambleEffect = (el) => {
+            let iteration = 0;
+            const originalValue = el.innerText;
+            const interval = setInterval(() => {
+                el.innerText = originalValue.split("").map((letter, index) => {
+                    if(index < iteration) return originalValue[index];
+                    return chars[Math.floor(Math.random() * chars.length)];
+                }).join("");
+                if(iteration >= originalValue.length) clearInterval(interval);
+                iteration += 1/3;
+            }, 30);
+        };
+
+        document.querySelectorAll("h1, h2, a").forEach(el => {
+            el.addEventListener("mouseover", () => scrambleEffect(el));
         });
+        
+        // Initial scramble for h1
+        window.onload = () => scrambleEffect(document.querySelector("h1"));
     </script>
 </body>
 </html>

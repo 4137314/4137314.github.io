@@ -1,125 +1,54 @@
 :root {
-    /* Palette: Slate & Pastel (Ingegnere/Moderno) */
-    --bg-deep: #1a1e23;          /* Grigio ardesia profondo */
-    --panel-bg: #232830;        /* Grigio pannello leggermente più chiaro */
-    --text-primary: #d1d5db;    /* Grigio chiaro pastello (alta leggibilità) */
-    --accent-blue: #89ddff;     /* Blu ghiaccio pastello (focus) */
-    --accent-gold: #ffcb6b;     /* Ambra pastello (warning/prompt) */
-    --border-soft: rgba(137, 221, 255, 0.15);
-    --font-mono: 'JetBrains Mono', 'Fira Code', 'Roboto Mono', monospace;
+    --bg: #0a0b10;
+    --fg: #c0caf5;
+    --accent: #7aa2f7;
+    --dim: #565f89;
+    --danger: #f7768e;
+    --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
 }
 
 body {
-    background-color: var(--bg-deep);
-    color: var(--text-primary);
+    background-color: var(--bg);
+    color: var(--fg);
     font-family: var(--font-mono);
-    font-size: 15px;
+    line-height: 1.6;
     margin: 0;
-    line-height: 1.8;
-    -webkit-font-smoothing: antialiased;
-}
-
-/* Effetto Scanline: Molto più sottile e meno invasivo */
-body::before {
-    content: "";
-    position: fixed;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(255, 255, 255, 0.02) 50%);
-    background-size: 100% 3px;
-    pointer-events: none;
-    z-index: 1000;
-}
-
-.container {
-    max-width: 850px;
-    margin: 0 auto;
-    padding: 3rem 1.5rem;
-}
-
-/* Sezioni: Design pulito da scheda tecnica */
-header, section, footer {
-    margin-bottom: 2rem;
-    background: var(--panel-bg);
-    border: 1px solid var(--border-soft);
-    border-radius: 4px; /* Angoli leggermente smussati, più moderno */
     padding: 2rem;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
-header {
-    border-top: 3px solid var(--accent-blue);
+/* Effetto Scanline per CRT feel */
+body::before {
+    content: " ";
+    display: block;
+    position: fixed;
+    top: 0; left: 0; bottom: 0; right: 0;
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), 
+                linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+    z-index: 9999;
+    pointer-events: none;
+    background-size: 100% 4px, 3px 100%;
 }
 
-/* Card per holos/: Aspetto da "modulo elettronico" */
+.container { max-width: 900px; margin: 0 auto; }
+
+a { color: var(--accent); text-decoration: none; transition: 0.3s; }
+a:hover { color: var(--fg); background: var(--accent); color: var(--bg); }
+
 .card {
-    border-left: 2px solid var(--accent-gold);
-    background: rgba(255, 203, 107, 0.03);
-    padding: 1.2rem;
-    margin: 1.5rem 0;
-    color: #b0bec5;
+    border: 1px solid var(--dim);
+    padding: 1.5rem;
+    background: rgba(10, 11, 16, 0.8);
+    position: relative;
 }
 
-/* Link: Eleganti e non invasivi */
-a {
-    color: var(--accent-blue);
-    text-decoration: none;
-    padding: 2px 4px;
-    border-radius: 2px;
-    transition: all 0.2s ease;
+.card::before {
+    content: "STATUS: VERIFIED";
+    position: absolute;
+    top: -10px; right: 10px;
+    background: var(--bg);
+    font-size: 0.7rem;
+    color: var(--dim);
+    padding: 0 5px;
 }
 
-a:hover {
-    background: rgba(137, 221, 255, 0.1);
-    color: #fff;
-    box-shadow: 0 0 8px rgba(137, 221, 255, 0.3);
-}
-
-/* Prompt: Stile terminale accademico */
-.prompt { 
-    color: var(--accent-gold); 
-    font-weight: 600;
-}
-
-.prompt::before {
-    content: "guest@science:~$ "; /* Personalizzabile */
-    opacity: 0.7;
-}
-
-/* Scrollbar minimale */
-::-webkit-scrollbar { width: 8px; }
-::-webkit-scrollbar-track { background: var(--bg-deep); }
-::-webkit-scrollbar-thumb { 
-    background: #37474f; 
-    border-radius: 10px;
-}
-::-webkit-scrollbar-thumb:hover { background: var(--accent-blue); }
-
-.contact-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-    margin-bottom: 1.5rem;
-}
-
-.contact-item {
-    font-size: 0.9rem;
-}
-
-.footer-divider {
-    border: 0;
-    border-top: 1px solid var(--border-soft);
-    margin: 1rem 0;
-}
-
-.footer-bottom {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 0.75rem;
-    opacity: 0.6;
-}
-
-.tech-stack {
-    font-style: italic;
-    color: var(--accent-blue);
-}
+.prompt { color: var(--danger); font-weight: bold; }
