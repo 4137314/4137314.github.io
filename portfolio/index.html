@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Selected university, personal, engineering, DevOps, and systems projects by Mattia Fait.">
+    <meta property="og:title" content="Project portfolio — Mattia Fait">
+    <meta property="og:description" content="A categorized index of selected engineering and software projects, with project pages and source repositories.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://4137314.github.io/portfolio/">
+    <title>Project portfolio — Mattia Fait</title>
+    <link rel="stylesheet" href="../config/style.css">
+</head>
+<body class="portfolio-site">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+        <div class="container nav-wrap">
+            <a class="brand" href="../" aria-label="Mattia Fait home"><span class="brand-mark">MF</span><span>Mattia Fait</span></a>
+            <nav aria-label="Primary navigation">
+                <a href="#university">University</a>
+                <a href="#personal">Personal</a>
+                <a href="#engineering">Engineering &amp; systems</a>
+                <a href="../asset/cv/cv_mattia_fait.pdf">CV <span aria-hidden="true">↗</span></a>
+            </nav>
+        </div>
+    </header>
+    <main id="main" class="container portfolio-page">
+        <header class="portfolio-heading">
+            <a class="back-link" href="../">← Main site</a>
+            <p class="eyebrow">Project portfolio</p>
+            <h1>Selected projects</h1>
+            <p class="portfolio-intro">A categorized overview of university work, personal projects, and engineering and systems work. Each entry links to a short project brief and its source repository.</p>
+        </header>
+
+        <section id="university" class="portfolio-category" aria-labelledby="university-title">
+            <div class="section-heading"><div><p class="eyebrow">01 / Academic work</p><h2 id="university-title">University projects</h2></div></div>
+            <div class="project-grid">
+                <article class="project-card"><div class="project-top"><span class="project-number">UNI · 01</span><span class="tag">Thesis</span></div><h3>Synthesis of Quantum Transducers</h3><p>Bachelor thesis on synthesis in a Gaussian quasi-linear gauge-covariant regime.</p><div class="project-meta"><a href="../projects/bachelor-thesis/">Project brief ↗</a><a href="https://github.com/4137314/bachelor-thesis">Source ↗</a></div></article>
+                <article class="project-card"><div class="project-top"><span class="project-number">UNI · 02</span><span class="tag">Computer architecture</span></div><h3>RISC-V CPU core</h3><p>VHDL RV32IM/Zicsr processor with single-cycle and pipelined implementations, verification, and FPGA flows.</p><div class="project-meta"><a href="../projects/risc-v/">Project brief ↗</a><a href="https://github.com/4137314/RISC-V">Source ↗</a></div></article>
+                <article class="project-card"><div class="project-top"><span class="project-number">UNI · 03</span><span class="tag">FPGA</span></div><h3>Runtime-reconfigurable CGRA</h3><p>Coarse-grained reconfigurable array with a host tool, emulator, configuration language, and hardware flows.</p><div class="project-meta"><a href="../projects/ald-cgra/">Project brief ↗</a><a href="https://github.com/4137314/ald-cgra">Source ↗</a></div></article>
+                <article class="project-card"><div class="project-top"><span class="project-number">UNI · 04</span><span class="tag">Embedded systems</span></div><h3>RP2040 telemetry logger</h3><p>Firmware for GPS and environmental telemetry, persistent logging, USB mass storage, and an OLED interface.</p><div class="project-meta"><a href="../projects/ppse-firmware/">Project brief ↗</a><a href="https://github.com/4137314/ppse-lab-firmware">Source ↗</a></div></article>
+                <article class="project-card"><div class="project-top"><span class="project-number">UNI · 05</span><span class="tag">Hardware</span></div><h3>Power supply emulator</h3><p>KiCad schematic and PCB project for emulating power-supply circuits during testing and prototyping.</p><div class="project-meta"><a href="../projects/ppse-hardware/">Project brief ↗</a><a href="https://github.com/4137314/ppse-hardware">Source ↗</a></div></article>
+            </div>
+        </section>
+
+        <section id="personal" class="portfolio-category" aria-labelledby="personal-title">
+            <div class="section-heading"><div><p class="eyebrow">02 / Personal work</p><h2 id="personal-title">Personal projects</h2></div></div>
+            <div class="project-grid">
+                <article class="project-card"><div class="project-top"><span class="project-number">PERSONAL · 01</span><span class="tag">Formal methods</span></div><h3>Lean synthesis project</h3><p>Lean 4 frontend and semantic IR for typed engineering models, properties, and machine-checked proofs.</p><div class="project-meta"><a href="../projects/synthesis/">Project brief ↗</a><a href="https://github.com/4137314/synthesis">Source ↗</a></div></article>
+                <article class="project-card"><div class="project-top"><span class="project-number">PERSONAL · 02</span><span class="tag">Systems programming</span></div><h3>Terminal retro games</h3><p>Modular C and ncurses collection of classic games, built with GNU Autotools.</p><div class="project-meta"><a href="../projects/retro-games/">Project brief ↗</a><a href="https://github.com/4137314/retro-games">Source ↗</a></div></article>
+            </div>
+        </section>
+
+        <section id="engineering" class="portfolio-category" aria-labelledby="engineering-title">
+            <div class="section-heading"><div><p class="eyebrow">03 / Infrastructure and tooling</p><h2 id="engineering-title">Engineering, DevOps &amp; systems</h2></div></div>
+            <div class="project-grid">
+                <article class="project-card"><div class="project-top"><span class="project-number">SYSTEMS · 01</span><span class="tag">Linux</span></div><h3>NixOS configuration</h3><p>Declarative NixOS configuration for a workstation and local NAS, including development tools, networking, storage, and services.</p><div class="project-meta"><a href="../projects/nixos-config/">Project brief ↗</a><a href="https://github.com/4137314/nixos-config">Source ↗</a></div></article>
+                <article class="project-card"><div class="project-top"><span class="project-number">SYSTEMS · 02</span><span class="tag">Developer tooling</span></div><h3>HackerOne bug bounty workspace</h3><p>A reproducible Nix-based workspace for authorized programs, with scope-aware workflows and a local PostgreSQL-backed tool.</p><div class="project-meta"><a href="../projects/hack-workspace/">Project brief ↗</a><a href="https://github.com/4137314/hack-workspace">Source ↗</a></div></article>
+            </div>
+        </section>
+
+        <section class="portfolio-contact" aria-labelledby="portfolio-contact-title">
+            <h2 id="portfolio-contact-title">Contact</h2>
+            <p>For freelance or contract enquiries, email <a href="mailto:mat03.dev@gmail.com">mat03.dev@gmail.com</a>.</p>
+        </section>
+    </main>
+    <footer class="site-footer"><div class="container footer-wrap"><span>© 2026 Mattia Fait</span><a href="https://github.com/4137314/portfolio">Portfolio index repository ↗</a></div></footer>
+</body>
+</html>
