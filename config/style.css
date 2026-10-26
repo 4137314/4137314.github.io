@@ -58,6 +58,8 @@ h1 em { color: var(--cyan); font-style: normal; }
 .section-heading .eyebrow { margin-bottom: .45rem; }
 h2 { margin-bottom: 0; font-size: clamp(2rem, 4vw, 3.15rem); line-height: 1.05; letter-spacing: -.05em; }
 .text-link { color: var(--muted); font-size: .9rem; white-space: nowrap; }
+.portfolio-callout { max-width: 680px; padding: 1rem 0; }
+.portfolio-callout p { margin-bottom: 1.4rem; color: var(--muted); font-size: 1.05rem; }
 .project-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
 .project-card { display: flex; min-height: 250px; flex-direction: column; padding: 1.35rem; border: 1px solid var(--line); border-radius: 4px; background: transparent; }
 .project-card:hover { border-color: rgba(125, 211, 252, .55); }
