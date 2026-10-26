@@ -1,9 +1,16 @@
 # Site Settings
-title: 4137314 Portfolio
+title: Mattia Fait — Engineering, Formal Methods & Systems
 email: mattia.fait.science@gmail.com
-description: Research & Development in Formal Systems | Lead Architect of holos/
+description: Electronic engineering student and developer working on formal methods, digital hardware, embedded systems, and reproducible infrastructure.
 baseurl: "" 
 url: "https://4137314.github.io"
+twitter:
+  username: 4137314
+social:
+  name: Mattia Fait
+  links:
+    - https://github.com/4137314
+    - https://www.linkedin.com/in/mattia-f-402062447
 
 # Build Settings
 markdown: kramdown
