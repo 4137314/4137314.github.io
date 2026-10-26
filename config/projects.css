@@ -1,0 +1,14 @@
+@import url("style.css");
+
+.project-page { max-width: 760px; padding-top: 4rem; padding-bottom: 6rem; }
+.project-page .back-link { display: inline-block; margin-bottom: 3rem; color: var(--muted); }
+.project-page h1 { max-width: none; font-size: clamp(2.4rem, 5vw, 4rem); }
+.project-page .summary { max-width: 680px; color: var(--muted); font-size: 1.15rem; }
+.project-details { margin: 3rem 0; border-top: 1px solid var(--line); }
+.project-details > div { display: grid; grid-template-columns: 10rem 1fr; gap: 1rem; padding: 1rem 0; border-bottom: 1px solid var(--line); }
+.project-details dt { color: var(--faint); font: .75rem var(--font-mono); text-transform: uppercase; }
+.project-details dd { margin: 0; }
+.project-links { display: flex; flex-wrap: wrap; gap: 1rem; }
+.project-links a { color: var(--cyan); }
+.project-links a:hover { text-decoration: underline; }
+@media (max-width: 600px) { .project-details > div { grid-template-columns: 1fr; gap: .35rem; } }
