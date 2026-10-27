@@ -79,6 +79,20 @@ class SiteTests(unittest.TestCase):
                 self.assertNotIn(forbidden, source)
             self.assertFalse(any(tag == "script" for tag, _ in Document(page).elements))
 
+    def test_images_have_accessible_descriptions_and_reserved_space(self):
+        for page in PAGES:
+            for tag, attrs in Document(page).elements:
+                if tag == "img":
+                    with self.subTest(page=page.name, image=attrs.get("src")):
+                        self.assertTrue(attrs.get("alt", "").strip())
+                        self.assertGreater(int(attrs.get("width", 0)), 0)
+                        self.assertGreater(int(attrs.get("height", 0)), 0)
+
+    def test_home_links_to_selected_project_briefs(self):
+        links = {attrs.get("href") for tag, attrs in Document(PAGES[0]).elements if tag == "a"}
+        for project in ("risc-v", "ppse-firmware", "ald-cgra", "nixos-config"):
+            self.assertIn(f"projects/{project}/", links)
+
     def test_generated_portfolio_markers_remain_intact(self):
         source = PAGES[1].read_text(encoding="utf-8")
         for marker in ("<!-- GENERATED PROJECT INDEX START -->", "<!-- GENERATED PROJECT INDEX END -->"):

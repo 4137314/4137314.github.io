@@ -6,6 +6,7 @@ Static portfolio published at <https://4137314.github.io/>. Built with semantic 
 
 - `index.html`: introduction, selected projects, education, working approach, and contact.
 - `config/style.css`: shared responsive styles for the homepage and project index.
+- `asset/system-map.svg`: lightweight conceptual system diagram, not a schematic or measured result.
 - `portfolio/index.html`: project index; the block between `GENERATED PROJECT INDEX` markers is maintained by `.github/workflows/sync-portfolio.yml` using metadata from `4137314/portfolio`. Edit the source metadata, not the generated block.
 - `asset/cv/`: CV source and published PDF, maintained separately from the website copy.
 - `tests/test_site.py`: local structural, internal-link, and content-boundary checks.
@@ -27,6 +28,12 @@ git diff --check
 ```
 
 Check both pages at narrow mobile and desktop widths. Verify navigation, keyboard focus, text readability, and that all content remains available without JavaScript.
+
+## Visual direction
+
+Technical editorial: ink-blue surfaces, mint accents, a restrained drafting grid, and monospace labels alongside system-font headings. Project cards separate conceptual flows from repository evidence and link to both project briefs and source. Keep diagrams explicitly conceptual; do not add fictional plots, benchmarks, or validation badges.
+
+Navigation and project links remain keyboard-accessible, with visible focus, mobile touch targets, and reduced-motion support. Images reserve layout space; there are no external font or script requests. The shared stylesheet also applies to the generated portfolio index without modifying its generated content.
 
 ## Editorial boundaries
 

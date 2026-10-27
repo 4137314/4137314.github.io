@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="280" viewBox="0 0 480 280" fill="none">
+  <defs>
+    <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M20 0H0V20" stroke="#9db4c8" stroke-opacity=".1"/></pattern>
+    <marker id="arrow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="m1 1 5 3-5 3" stroke="#80dfcd" stroke-width="1.2"/></marker>
+  </defs>
+  <rect width="480" height="280" fill="url(#grid)"/>
+  <g stroke="#80dfcd" stroke-width="1.5">
+    <path d="M112 130h54m148 0h54" marker-end="url(#arrow)"/>
+    <path d="M240 180v40H72v-60m336 0v60H260v-40" stroke-dasharray="4 5"/>
+    <rect x="166" y="80" width="148" height="100" rx="4" fill="#142a36"/>
+    <path d="M190 70v10m20-10v10m20-10v10m20-10v10m20-10v10m20-10v10M190 180v10m20-10v10m20-10v10m20-10v10m20-10v10m20-10v10"/>
+  </g>
+  <g stroke="#7595ab"><rect x="20" y="100" width="92" height="60" rx="3" fill="#101e2b"/><rect x="368" y="100" width="92" height="60" rx="3" fill="#101e2b"/></g>
+  <g fill="#eaf1f5" font-family="monospace" font-size="12" text-anchor="middle">
+    <text x="66" y="135">INPUT</text><text x="240" y="124">DIGITAL</text><text x="240" y="143">SYSTEM</text><text x="414" y="135">OUTPUT</text>
+  </g>
+  <g fill="#a6bbcc" font-family="monospace" font-size="10" letter-spacing="1">
+    <text x="20" y="30">01 / HARDWARE ↔ SOFTWARE</text><text x="20" y="260">CONCEPTUAL SYSTEM VIEW</text><text x="310" y="260">NOT A MEASUREMENT</text>
+    <text x="174" y="52" fill="#80dfcd">MODEL · BUILD · CHECK</text>
+  </g>
+  <path d="M20 68h35m-35-6v12M425 68h35m0-6v12" stroke="#7595ab"/>
+</svg>
