@@ -3,26 +3,27 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Mattia Fait — electronic engineering student working on digital hardware, embedded systems, formal methods, and Linux tooling. Available for freelance and contract work.">
+    <meta name="description" content="Mattia Fait — bachelor's student on the Electronics track at the University of Trento. Digital design, embedded firmware, and independent Linux projects, with source and documentation.">
     <meta name="theme-color" content="#0b1020">
-    <meta property="og:title" content="Mattia Fait — Engineering and Software">
-    <meta property="og:description" content="Selected engineering projects and contact information.">
+    <meta property="og:title" content="Mattia Fait — Electronics & Embedded Systems">
+    <meta property="og:description" content="Completing my bachelor's degree and building hardware and software projects. Explore academic work, independent projects, and the source behind them.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://4137314.github.io/">
-    <title>Mattia Fait — Engineering and Software</title>
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='12' fill='%230b1020'/><path d='M16 16h32v8H24v8h18v8H24v8h24v8H16z' fill='%237dd3fc'/></svg>">
+    <link rel="canonical" href="https://4137314.github.io/">
+    <title>Mattia Fait — Electronics & Embedded Systems</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='12' fill='%230b1020'/><text x='8' y='42' font-size='30' font-family='monospace' fill='%237dd3fc'>MF</text></svg>">
     <link rel="stylesheet" href="config/style.css">
 </head>
-<body>
+<body class="home-site">
     <a class="skip-link" href="#main">Skip to content</a>
     <header class="site-header">
         <div class="container nav-wrap">
-            <a class="brand" href="./" aria-label="Mattia Fait home"><span class="brand-mark">MF</span><span>Mattia Fait</span></a>
+            <a class="brand" href="./" aria-label="Mattia Fait home"><span class="brand-mark" aria-hidden="true">MF</span><span>Mattia Fait</span></a>
             <nav aria-label="Primary navigation">
-                <a href="#work">Work</a>
-                <a href="#about">About</a>
-                <a href="asset/cv/cv_mattia_fait.pdf">CV <span aria-hidden="true">↗</span></a>
-                <a class="nav-button" href="https://www.linkedin.com/in/mattia-f-402062447" rel="me noopener" target="_blank">LinkedIn <span aria-hidden="true">↗</span></a>
+                <a href="#work">Projects</a>
+                <a href="#education">Education</a>
+                <a href="#about">Approach</a>
+                <a class="nav-button" href="#contact">Get in touch <span aria-hidden="true">↗</span></a>
             </nav>
         </div>
     </header>
@@ -30,53 +31,117 @@
     <main id="main">
         <section class="hero container" aria-labelledby="hero-title">
             <div class="hero-copy">
-                <p class="eyebrow">Electronic engineering · Trento, Italy</p>
-                <h1 id="hero-title">Engineering, hardware, and software.</h1>
-                <p class="hero-lede">I am an electronic engineering student working on digital hardware, embedded systems, formal methods, and Linux tooling. I value clear requirements, practical implementation, and work that can be tested.</p>
+                <p class="eyebrow">Electronics · Embedded systems · Linux</p>
+                <h1 id="hero-title">Understanding systems.<br><em>Building them, too.</em></h1>
+                <p class="hero-lede">I’m Mattia, a bachelor’s student on the Electronics track at the University of Trento. I’m completing my degree while developing projects in digital hardware, embedded firmware, and Linux tooling.</p>
+                <p class="hero-detail">This portfolio brings together my university work and independent projects, with source code and documentation to show what is implemented and what is still in progress.</p>
                 <div class="hero-actions">
-                    <a class="button primary" href="#work">Selected projects <span aria-hidden="true">↓</span></a>
-                    <a class="button secondary" href="mailto:mattia.fait.eng@gmail.com">Contact me <span aria-hidden="true">↗</span></a>
+                    <a class="button primary" href="#work">Explore the work <span aria-hidden="true">↓</span></a>
+                    <a class="button secondary" href="asset/cv/cv_mattia_fait.pdf">View CV <span aria-hidden="true">↗</span></a>
                 </div>
             </div>
-            <aside class="hero-note" aria-label="Current focus">
-                <p class="note-label">AVAILABILITY</p>
-                <h2>Freelance and contract work</h2>
-                <p>Available for suitable freelance engineering and software projects.</p>
-                <div class="note-footer"><span>Trento, Italy</span><a href="mailto:mattia.fait.eng@gmail.com">Contact me</a></div>
+            <aside class="engineering-note" aria-labelledby="profile-title">
+                <div class="note-top"><span class="note-label">PROFILE / AT A GLANCE</span><span class="note-symbol" aria-hidden="true">[ MF ]</span></div>
+                <h2 id="profile-title">From coursework<br>to working projects.</h2>
+                <dl class="profile-facts">
+                    <div><dt>Education</dt><dd>Bachelor’s degree in progress<br>University of Trento</dd></div>
+                    <div><dt>Hands-on work</dt><dd>VHDL · C/C++ · RP2040<br>Linux · NixOS · KiCad</dd></div>
+                    <div><dt>Based in</dt><dd>Trento, Italy</dd></div>
+                </dl>
+                <a class="text-link" href="https://github.com/4137314">Explore my repositories <span aria-hidden="true">↗</span></a>
             </aside>
         </section>
 
+        <div class="focus-strip container" aria-label="Portfolio areas">
+            <span><b>01</b> Digital hardware</span><span><b>02</b> Embedded software</span><span><b>03</b> Independent tooling</span>
+        </div>
+
         <section id="work" class="section container" aria-labelledby="work-title">
             <div class="section-heading">
-                <div><p class="eyebrow">Selected work</p><h2 id="work-title">Project examples</h2></div>
+                <div><p class="eyebrow">01 / Selected work</p><h2 id="work-title">Projects, not just keywords.</h2></div>
+                <a class="text-link" href="portfolio/">Full project index <span aria-hidden="true">→</span></a>
             </div>
-            <div class="portfolio-callout">
-                <p>Briefs for selected projects, dedicated project pages, and links to the source repositories are collected in one index.</p>
-                <a class="button primary" href="portfolio/">Browse the project portfolio <span aria-hidden="true">→</span></a>
+            <p class="section-intro">A selection of academic and personal work. The linked repositories document implementation details, test workflows, and remaining work.</p>
+            <div class="project-grid">
+                <article class="project-card">
+                    <div class="project-top"><span class="project-number">01 / UNIVERSITY</span><span class="tag">Digital design</span></div>
+                    <h3>RISC-V processor in VHDL</h3>
+                    <p>A CPU project with single-cycle and pipelined implementations. Work spans the datapath, instruction execution, simulation, and FPGA build flows.</p>
+                    <p class="project-evidence"><strong>In the repository</strong> Self-checking testbenches and architecture-test scripts, alongside the RTL and synthesis setup.</p>
+                    <div class="project-meta"><span>VHDL · GHDL · RISC-V</span><a href="https://github.com/4137314/RISC-V">Explore source <span aria-hidden="true">↗</span></a></div>
+                </article>
+                <article class="project-card">
+                    <div class="project-top"><span class="project-number">02 / UNIVERSITY</span><span class="tag">Embedded firmware</span></div>
+                    <h3>RP2040 telemetry logger</h3>
+                    <p>Firmware for GPS and environmental data acquisition, persistent logging, an OLED interface, and USB access to recorded data.</p>
+                    <p class="project-evidence"><strong>In the repository</strong> Firmware modules, build workflows, and technical documentation for the system and its interfaces.</p>
+                    <div class="project-meta"><span>C/C++ · RP2040 · USB</span><a href="https://github.com/4137314/ppse-lab-firmware">Explore source <span aria-hidden="true">↗</span></a></div>
+                </article>
+                <article class="project-card">
+                    <div class="project-top"><span class="project-number">03 / UNIVERSITY</span><span class="tag">Hardware + software</span></div>
+                    <h3>Runtime-reconfigurable CGRA</h3>
+                    <p>An Advanced Logic Design project connecting a VHDL processing array to a C host library and command-line tool over a UART protocol.</p>
+                    <p class="project-evidence"><strong>In the repository</strong> A host-side emulator, RTL simulation, and a tracker separating verified behavior from pending board validation.</p>
+                    <div class="project-meta"><span>VHDL · C · FPGA</span><a href="https://github.com/4137314/ald-cgra">Explore source <span aria-hidden="true">↗</span></a></div>
+                </article>
+                <article class="project-card">
+                    <div class="project-top"><span class="project-number">04 / INDEPENDENT</span><span class="tag">Systems tooling</span></div>
+                    <h3>A reproducible Linux environment</h3>
+                    <p>My NixOS configuration for a personal workstation and local NAS: development tools, shell and editor setup, storage, and local services.</p>
+                    <p class="project-evidence"><strong>In the repository</strong> Declarative configuration and modular system setup, maintained for my own development environment and local services.</p>
+                    <div class="project-meta"><span>Linux · Nix · Shell</span><a href="https://github.com/4137314/nixos-config">Explore source <span aria-hidden="true">↗</span></a></div>
+                </article>
             </div>
+            <div class="work-note"><p>Beyond these projects, I explore Lean 4 and mathematical knowledge tools through personal learning projects and ongoing experiments.</p><a class="text-link" href="portfolio/#personal">See personal projects <span aria-hidden="true">→</span></a></div>
         </section>
 
-        <section id="about" class="about-section">
-            <div class="container about-grid">
-                <div><p class="eyebrow">About</p><h2>How I work</h2></div>
-                <div class="about-copy">
-                    <p>I am studying electronic engineering and enjoy projects that connect specifications to working hardware or software.</p>
-                    <p>I try to keep scope clear, communicate progress, and leave behind tests and documentation where they are useful. I am interested in freelance or contract work that fits my experience.</p>
-                    <div class="skill-list" aria-label="Areas of focus"><span>Formal verification</span><span>Digital design</span><span>Embedded systems</span><span>Linux & NixOS</span><span>Technical writing</span></div>
+        <section id="education" class="education-section" aria-labelledby="education-title">
+            <div class="container">
+                <div class="section-heading"><div><p class="eyebrow">02 / Academic foundations</p><h2 id="education-title">An electronics foundation.<br>A practical direction.</h2></div></div>
+                <div class="education-grid">
+                    <div class="degree-summary">
+                        <p class="degree-status">Bachelor’s degree · In progress</p>
+                        <h3>Computer, Communications and Electronic Engineering</h3>
+                        <p>Electronics track · University of Trento<br>Italian degree class L-8</p>
+                        <p>I’m completing my undergraduate studies, with a particular interest in the boundary between digital hardware and the software that controls it.</p>
+                    </div>
+                    <div class="coursework">
+                        <h3>Selected completed coursework</h3>
+                        <ul class="course-list">
+                            <li>Electronic Systems Design and Prototyping</li>
+                            <li>Laboratory of Systems on Chip</li>
+                            <li>High-Frequency Circuits for Systems-on-Chip</li>
+                            <li>Signal Processing 2 · Fundamentals of Communications</li>
+                            <li>Electromagnetic Fields · Physics</li>
+                            <li>Calculus · Linear Algebra · Probability · Programming 1</li>
+                        </ul>
+                        <p class="course-note">My study plan also includes digital and analog electronics, computer architecture, and advanced logic design. These areas are part of my ongoing training; project work is presented separately above.</p>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section class="contact-section container" aria-labelledby="contact-title">
-            <p class="eyebrow">Contact</p>
-            <h2 id="contact-title">Freelance and contract enquiries</h2>
-            <p>For engineering or software work, please include a short description of the task, expected timeline, and scope.</p>
-            <div class="contact-links"><a class="button primary" href="mailto:mattia.fait.eng@gmail.com">Contact me <span aria-hidden="true">↗</span></a><a class="button secondary" href="https://www.linkedin.com/in/mattia-f-402062447" target="_blank" rel="me noopener">LinkedIn <span aria-hidden="true">↗</span></a></div>
+        <section id="about" class="section container" aria-labelledby="about-title">
+            <div class="section-heading"><div><p class="eyebrow">03 / Working approach</p><h2 id="about-title">Independent work.<br>Clear boundaries.</h2></div></div>
+            <p class="section-intro">University gives me the foundations; personal projects give me room to make decisions, investigate problems, and learn from the results. This is the approach I aim to bring to collaborations.</p>
+            <div class="approach-grid">
+                <article><span class="project-number">01 / DEFINE</span><h3>Start with a clear scope</h3><p>Agree on the task, interfaces, and expected outcome. Be open about what I already know and what needs investigation.</p></article>
+                <article><span class="project-number">02 / CHECK</span><h3>Make behavior observable</h3><p>Use tests, simulation, logs, or measurements appropriate to the task. Distinguish a simulated result from a hardware measurement.</p></article>
+                <article><span class="project-number">03 / EXPLAIN</span><h3>Leave a useful handover</h3><p>Document the build steps, decisions, and limitations so that the next person can understand and continue the work.</p></article>
+            </div>
+        </section>
+
+        <section id="contact" class="contact-section" aria-labelledby="contact-title">
+            <div class="container contact-grid">
+                <div><p class="eyebrow">04 / Get in touch</p><h2 id="contact-title">Have a concrete<br>technical problem?</h2></div>
+                <div><p>I’m open to discussing small, well-defined collaborations in embedded software, digital design, or Linux tooling that fit my current experience and study commitments.</p><p>Send a short description of the task, the existing hardware or software, and the expected timeline. We can establish whether I’m a good fit before making commitments.</p>
+                    <div class="contact-links"><a class="button primary" href="mailto:mattia.fait.eng@gmail.com">Email me <span aria-hidden="true">↗</span></a><a class="button secondary" href="https://www.linkedin.com/in/mattia-f-402062447" rel="me">LinkedIn <span aria-hidden="true">↗</span></a></div>
+                </div>
+            </div>
         </section>
     </main>
-
     <footer class="site-footer">
-        <div class="container footer-wrap"><span>© 2026 Mattia Fait</span><span>Designed for clarity · Built with HTML and CSS</span><span><a href="https://github.com/4137314" target="_blank" rel="noopener">GitHub ↗</a></span></div>
+        <div class="container footer-wrap"><span>© 2026 Mattia Fait · Trento, Italy</span><span>Electronics student · Independent projects</span><a href="https://github.com/4137314" rel="me">GitHub <span aria-hidden="true">↗</span></a></div>
     </footer>
 </body>
 </html>
