@@ -43,4 +43,10 @@ Education summaries are based on the supplied study plan. Only list courses as c
 
 Project descriptions should point to source code and distinguish implementation, simulation, synthesis, and physical hardware validation. Personal Lean and knowledge-management work is exploratory, not evidence of professional formal-verification expertise. Collaboration language should remain bounded by current experience and study commitments.
 
-The CV is a separate artifact: changes to this site's copy do not regenerate or validate its contents.
+## Single-page CV
+
+`asset/cv/main.tex` is the XeLaTeX entry point for the English, one-page A4 CV aimed at scoped freelance Linux systems and automation contracts. It uses 11 pt text, a single-column layout, selectable text, and two selected independent systems projects. Keep the BSc explicitly in progress; do not imply client infrastructure experience, an active VAT registration, or unrestricted availability without confirmation.
+
+Build from `asset/cv/` with `xelatex -interaction=nonstopmode -halt-on-error main.tex` (twice for stable links), then copy `main.pdf` to `cv_mattia_fait.pdf`. Required packages include `fontspec`, Latin Modern fonts, `geometry`, `titlesec`, `enumitem`, `tabularx`, and `hyperref`. Keep intermediate files outside the repository using `-output-directory` when building locally.
+
+With Poppler installed, `python3 -m unittest discover -s tests -p 'test_cv.py' -v` verifies one A4 page and readable key content. The CV workflow installs Poppler and runs these checks before publishing its PDF. Inspect the rendered page as well: automated checks do not prove visual quality. Website copy changes do not automatically update CV content.

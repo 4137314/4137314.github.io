@@ -1,7 +1,7 @@
 name: Compile LaTeX CV
 on: [push]
 
-# Permessi necessari per permettere all'action di fare il commit del PDF
+# Allow the workflow to publish the compiled PDF back to the repository.
 permissions:
   contents: write
 
@@ -15,20 +15,20 @@ jobs:
       - name: Compile LaTeX
         uses: xu-cheng/latex-action@v3
         with:
-          # RELATIVO alla working_directory: se sei già dentro asset/cv, cerchi solo main.tex
           root_file: main.tex
-          compiler: xelatex 
+          compiler: xelatex
           working_directory: asset/cv/
 
-      - name: Rename and Prepare PDF
+      - name: Prepare and validate the single-page PDF
         run: |
-          # Il PDF viene generato dove si trova il root_file
-          # Lo rinominiamo per coerenza con il tuo sito
+          set -euo pipefail
           mv asset/cv/main.pdf asset/cv/cv_mattia_fait.pdf
+          sudo apt-get update
+          sudo apt-get install --no-install-recommends -y poppler-utils
+          python3 -m unittest discover -s tests -p 'test_cv.py' -v
 
       - name: Upload PDF to repository
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "docs: formal cv auto-update [skip ci]"
           file_pattern: 'asset/cv/cv_mattia_fait.pdf'
-          # [skip ci] evita che il commit automatico faccia ripartire l'action in loop

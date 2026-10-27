@@ -1,55 +1,17 @@
-\section{Selected Public Projects}
-
-\cvitem{nixos-config \href{https://github.com/4137314/nixos-config}{\small \faGithub}}{Systems \& Infrastructure}{NixOS workstation and local NAS configuration}{Present}
-\begin{itemize}[noitemsep, topsep=0pt]
-    \item Declarative system configuration for a high-efficiency workstation and local NAS, including Hyprland, networking, storage, containers, development tools, and reproducible operations workflows.
-    \item \textbf{Stack:} NixOS, Nix flakes, Bash, Hyprland, Docker, Samba, Syncthing.
+\section{Selected systems projects}
+{\small\color{muted}Independent projects on personal infrastructure; source available for technical review.}\par
+\projectheading{Declarative Linux workstation \& NAS}{NixOS / Nix / Bash}{https://github.com/4137314/nixos-config}
+\begin{itemize}
+    \item Maintain a modular NixOS configuration covering networking, storage, user environments,
+    Docker, Samba shares, and Syncthing file synchronization.
+    \item Use check/build/switch workflows, dry-run updates, and generation comparisons to review
+    system changes; expose service status, failed units, and journal views through local tooling.
 \end{itemize}
-
-\vspace{0.45em}
-
-\cvitem{RISC-V \href{https://github.com/4137314/RISC-V}{\small \faGithub}}{Computer Architecture}{Synthesizable RV32IM/Zicsr CPU core in VHDL}{Present}
-\begin{itemize}[noitemsep, topsep=0pt]
-    \item Designed a modular single-cycle and five-stage pipelined RISC-V core with hazards, forwarding, interrupts, CSRs, memory-mapped peripherals, simulation, and FPGA synthesis flows.
-    \item \textbf{Stack:} VHDL, GHDL, Vivado, RISC-V, FPGA, Make.
-\end{itemize}
-
-\vspace{0.45em}
-
-\cvitem{ppse-lab-firmware \href{https://github.com/4137314/ppse-lab-firmware}{\small \faGithub}}{Embedded Systems}{RP2040 GPS and environmental telemetry logger}{Present}
-\begin{itemize}[noitemsep, topsep=0pt]
-    \item Implemented real-time GPS acquisition, telemetry, persistent logging, USB mass storage, OLED UI, and sensor feedback for an RP2040-based embedded system.
-    \item \textbf{Stack:} C/C++, RP2040, FreeRTOS, TinyUSB, LittleFS, GNSS, SSD1306.
-\end{itemize}
-
-\vspace{0.45em}
-
-\cvitem{ppse-hardware \href{https://github.com/4137314/ppse-hardware}{\small \faGithub}}{Digital Hardware}{Embedded-system PCB and electronics design}{Present}
-\begin{itemize}[noitemsep, topsep=0pt]
-    \item Designed the KiCad schematics and PCB for the companion embedded hardware, integrating the microcontroller, power, user interface, and sensor subsystems.
-    \item \textbf{Stack:} KiCad, PCB design, electronics, embedded hardware.
-\end{itemize}
-
-\vspace{0.45em}
-
-\cvitem{ald-cgra \href{https://github.com/4137314/ald-cgra}{\small \faGithub}}{Computer Architecture}{Runtime-reconfigurable coarse-grained array on FPGA}{Present}
-\begin{itemize}[noitemsep, topsep=0pt]
-    \item Developed a 4x4 processing-element array with a UART-controlled host tool, emulator, custom configuration language, simulation, synthesis, and verification flows.
-    \item \textbf{Stack:} VHDL, C, FPGA, UART, GHDL, Vivado, Make.
-\end{itemize}
-
-\vspace{0.45em}
-
-\cvitem{synthesis \href{https://github.com/4137314/synthesis}{\small \faGithub}}{Formal Methods}{Lean 4 formal engineering frontend and semantic IR}{Present}
-\begin{itemize}[noitemsep, topsep=0pt]
-    \item Built an extensible formal framework for typed engineering models, requirements, refinement, domain theories, and machine-checkable proofs.
-    \item \textbf{Stack:} Lean 4, Mathlib, formal verification, semantic IR, Nix.
-\end{itemize}
-
-\vspace{0.45em}
-
-\cvitem{retro-games \href{https://github.com/4137314/retro-games}{\small \faGithub}}{Systems Programming}{Terminal-based classic games collection}{Present}
-\begin{itemize}[noitemsep, topsep=0pt]
-    \item Implemented a modular ncurses game suite including Snake, Tetris, Pac-Man, Pong, Breakout, Chess, Minesweeper, and Sudoku.
-    \item \textbf{Stack:} C, ncurses, GNU Autotools, Unix, modular systems programming.
+\vspace{4pt}
+\projectheading{Reproducible CLI \& database workspace}{Nix / Python / PostgreSQL}{https://github.com/4137314/hack-workspace}
+\begin{itemize}
+    \item Develop a Nix-based environment with a project-local PostgreSQL cluster, database
+    lifecycle commands, and a Python CLI for authorized security-research workflows.
+    \item Implement a PostgreSQL-backed job queue, structured JSON output, and diagnostic commands;
+    keep active testing opt-in with explicit authorization scope checks.
 \end{itemize}
