@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Small Bash checks for certificates, disks, SSH keys, and backups that plug into existing monitoring.">
+    <title>ops-toolkit — Mattia Fait</title>
+    <link rel="stylesheet" href="../../config/projects.css">
+</head>
+<body>
+<main class="project-page container">
+    <a class="back-link" href="../../portfolio/">← Project portfolio</a>
+    <p class="eyebrow">Systems · Tooling</p>
+    <h1>ops-toolkit</h1>
+    <p class="summary">Small Bash checks for certificates, disks, SSH keys, and backups that plug into existing monitoring.</p>
+    <dl class="project-details">
+        <div><dt>Scope</dt><dd>Operational failures that often go unnoticed: expiring TLS certificates, full disks or inodes, weak or shared SSH keys, and stale backups.</dd></div>
+        <div><dt>Work</dt><dd>Four tools with a shared contract: Nagios-style exit codes and text, JSON, or Prometheus textfile output. Includes a Nix package and a NixOS module that runs checks on a timer.</dd></div>
+        <div><dt>Verification</dt><dd>bats tests with stubbed system commands, shellcheck, and a NixOS VM test that exports metrics through node_exporter.</dd></div>
+        <div><dt>Tools</dt><dd>Bash, OpenSSL, restic, Prometheus, Nix.</dd></div>
+    </dl>
+    <p class="project-links"><a href="https://github.com/4137314/ops-toolkit">Source repository ↗</a><a href="https://github.com/4137314/portfolio">Portfolio index ↗</a></p>
+</main>
+</body>
+</html>

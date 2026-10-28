@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="An Ansible collection that applies a production baseline to Debian, Ubuntu, and RHEL-family servers.">
+    <title>ansible-baseline — Mattia Fait</title>
+    <link rel="stylesheet" href="../../config/projects.css">
+</head>
+<body>
+<main class="project-page container">
+    <a class="back-link" href="../../portfolio/">← Project portfolio</a>
+    <p class="eyebrow">Systems · Ansible</p>
+    <h1>ansible-baseline</h1>
+    <p class="summary">An Ansible collection that applies a production baseline to Debian, Ubuntu, and RHEL-family servers.</p>
+    <dl class="project-details">
+        <div><dt>Scope</dt><dd>Existing servers that are not managed declaratively and need consistent access control, hardening, monitoring, and backups.</dd></div>
+        <div><dt>Work</dt><dd>Roles for operators with revocation, SSH and kernel hardening with unattended security updates, a single nftables ruleset, checksum-verified node_exporter, and restic with a systemd timer.</dd></div>
+        <div><dt>Verification</dt><dd>Molecule runs the full playbook on Debian 12 and Rocky Linux 9, checks idempotence, and verifies the effective SSH settings, firewall rules, metrics endpoint, and a real backup snapshot. ansible-lint runs with the production profile.</dd></div>
+        <div><dt>Tools</dt><dd>Ansible, Molecule, Docker, nftables, systemd, restic.</dd></div>
+    </dl>
+    <p class="project-links"><a href="https://github.com/4137314/ansible-baseline">Source repository ↗</a><a href="https://github.com/4137314/portfolio">Portfolio index ↗</a></p>
+</main>
+</body>
+</html>

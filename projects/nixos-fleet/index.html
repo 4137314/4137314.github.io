@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Composable NixOS modules and a repository template for managing company server fleets declaratively.">
+    <title>nixos-fleet — Mattia Fait</title>
+    <link rel="stylesheet" href="../../config/projects.css">
+</head>
+<body>
+<main class="project-page container">
+    <a class="back-link" href="../../portfolio/">← Project portfolio</a>
+    <p class="eyebrow">Systems · NixOS</p>
+    <h1>nixos-fleet</h1>
+    <p class="summary">Composable NixOS modules and a repository template for managing company server fleets declaratively.</p>
+    <dl class="project-details">
+        <div><dt>Scope</dt><dd>Server baselines for small and medium fleets: SSH, operator accounts, firewall, monitoring exposure, and backups.</dd></div>
+        <div><dt>Work</dt><dd>Modules under fleet.* (base, hardening, users, monitoring, backup) and a flake template with an inventory, roles, per-host files, and a deploy command.</dd></div>
+        <div><dt>Verification</dt><dd>A three-machine NixOS VM test checks key-only logins, sudo, refused root and password logins, exporter access limited to the monitoring network, account revocation, and a restic backup. The template's hosts are evaluated in CI.</dd></div>
+        <div><dt>Tools</dt><dd>NixOS, Nix flakes, nftables, fail2ban, restic, Prometheus exporters.</dd></div>
+    </dl>
+    <p class="project-links"><a href="https://github.com/4137314/nixos-fleet">Source repository ↗</a><a href="https://github.com/4137314/portfolio">Portfolio index ↗</a></p>
+</main>
+</body>
+</html>

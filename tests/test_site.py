@@ -90,7 +90,8 @@ class SiteTests(unittest.TestCase):
 
     def test_home_links_to_selected_project_briefs(self):
         links = {attrs.get("href") for tag, attrs in Document(PAGES[0]).elements if tag == "a"}
-        for project in ("risc-v", "ppse-firmware", "ald-cgra", "nixos-config"):
+        for project in ("risc-v", "ppse-firmware", "ald-cgra", "nixos-config",
+                        "nixos-fleet", "ansible-baseline", "observability-stack", "ops-toolkit"):
             self.assertIn(f"projects/{project}/", links)
 
     def test_generated_portfolio_markers_remain_intact(self):

@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Mattia Fait — bachelor's student on the Electronics track at the University of Trento. Digital design, embedded firmware, and independent Linux projects, with source and documentation.">
+    <meta name="description" content="Mattia Fait — bachelor's student on the Electronics track at the University of Trento. Digital design, embedded firmware, and open-source Linux infrastructure: NixOS and Ansible baselines, monitoring, and backups.">
     <meta name="theme-color" content="#0b1020">
     <meta property="og:title" content="Mattia Fait — Electronics & Embedded Systems">
     <meta property="og:description" content="Completing my bachelor's degree and building hardware and software projects. Explore academic work, independent projects, and the source behind them.">
@@ -21,6 +21,7 @@
             <a class="brand" href="./" aria-label="Mattia Fait home"><span class="brand-mark" aria-hidden="true">MF</span><span>Mattia Fait</span></a>
             <nav aria-label="Primary navigation">
                 <a href="#work">Projects</a>
+                <a href="#infrastructure">Infrastructure</a>
                 <a href="#education">Education</a>
                 <a href="#about">Approach</a>
                 <a class="nav-button" href="#contact">Get in touch <span aria-hidden="true">↗</span></a>
@@ -57,7 +58,7 @@
         </section>
 
         <div class="focus-strip container" aria-label="Portfolio areas">
-            <a href="#digital-hardware"><b>01</b> Digital hardware <span aria-hidden="true">↘</span></a><a href="#embedded-software"><b>02</b> Embedded software <span aria-hidden="true">↘</span></a><a href="portfolio/#engineering"><b>03</b> Independent tooling <span aria-hidden="true">↗</span></a>
+            <a href="#digital-hardware"><b>01</b> Digital hardware <span aria-hidden="true">↘</span></a><a href="#embedded-software"><b>02</b> Embedded software <span aria-hidden="true">↘</span></a><a href="#infrastructure"><b>03</b> Linux infrastructure <span aria-hidden="true">↘</span></a>
         </div>
 
         <section id="work" class="section container" aria-labelledby="work-title">
@@ -103,9 +104,51 @@
             <div class="work-note"><p>Beyond these projects, I explore Lean 4 and mathematical knowledge tools through personal learning projects and ongoing experiments.</p><a class="text-link" href="portfolio/#personal">See personal projects <span aria-hidden="true">→</span></a></div>
         </section>
 
+        <section id="infrastructure" class="section container" aria-labelledby="infrastructure-title">
+            <div class="section-heading">
+                <div><p class="eyebrow">02 / Open-source infrastructure</p><h2 id="infrastructure-title">Server baselines<br>you can adopt.</h2></div>
+                <a class="text-link" href="portfolio/#engineering">All systems projects <span aria-hidden="true">→</span></a>
+            </div>
+            <p class="section-intro">Four MIT-licensed building blocks for small and medium Linux fleets, designed to work together or on their own. Each repository runs its tests in CI on real virtual machines or containers. They are independent projects, not records of client deployments.</p>
+            <div class="project-grid">
+                <article class="project-card">
+                    <div class="project-top"><span class="project-number">01 / NIXOS</span><span class="tag">Infrastructure as code</span></div>
+                    <div class="system-flow" aria-label="Fleet workflow"><span>Inventory</span><i aria-hidden="true">→</i><span>Roles</span><i aria-hidden="true">→</i><span>Hosts</span></div>
+                    <h3><a href="projects/nixos-fleet/">nixos-fleet</a></h3>
+                    <p>NixOS modules and a repository template for server fleets: key-only SSH, operator access with revocation, firewall-scoped exporters, and restic backups.</p>
+                    <p class="project-evidence"><strong>In the repository</strong> A three-machine NixOS VM test covering logins, sudo, firewall scoping, account revocation, and a backup run.</p>
+                    <div class="project-meta"><span>NixOS · Nix flakes · nftables</span><a href="https://github.com/4137314/nixos-fleet">Explore source <span aria-hidden="true">↗</span></a></div>
+                </article>
+                <article class="project-card">
+                    <div class="project-top"><span class="project-number">02 / DEBIAN · RHEL</span><span class="tag">Configuration management</span></div>
+                    <div class="system-flow" aria-label="Ansible roles"><span>Users</span><i aria-hidden="true">→</i><span>Hardening</span><i aria-hidden="true">→</i><span>Firewall</span></div>
+                    <h3><a href="projects/ansible-baseline/">ansible-baseline</a></h3>
+                    <p>An Ansible collection that applies the same baseline to existing Debian, Ubuntu, and RHEL-family servers: SSH, operators, nftables, node_exporter, and restic.</p>
+                    <p class="project-evidence"><strong>In the repository</strong> Molecule scenarios on Debian 12 and Rocky Linux 9 with idempotence and functional verification, plus ansible-lint.</p>
+                    <div class="project-meta"><span>Ansible · Molecule · Linux</span><a href="https://github.com/4137314/ansible-baseline">Explore source <span aria-hidden="true">↗</span></a></div>
+                </article>
+                <article class="project-card">
+                    <div class="project-top"><span class="project-number">03 / MONITORING</span><span class="tag">Observability</span></div>
+                    <div class="system-flow" aria-label="Alerting pipeline"><span>Exporters</span><i aria-hidden="true">→</i><span>Rules</span><i aria-hidden="true">→</i><span>Alerts</span></div>
+                    <h3><a href="projects/observability-stack/">observability-stack</a></h3>
+                    <p>Prometheus, Alertmanager, Grafana, and Loki with alert rules for hosts, endpoints, certificates, and backups, plus a fleet overview dashboard.</p>
+                    <p class="project-evidence"><strong>In the repository</strong> promtool unit tests for alert rules, a NixOS VM test of the stack, and a Docker Compose smoke test.</p>
+                    <div class="project-meta"><span>Prometheus · Grafana · Compose</span><a href="https://github.com/4137314/observability-stack">Explore source <span aria-hidden="true">↗</span></a></div>
+                </article>
+                <article class="project-card">
+                    <div class="project-top"><span class="project-number">04 / TOOLING</span><span class="tag">Operational checks</span></div>
+                    <div class="system-flow" aria-label="Check outputs"><span>Check</span><i aria-hidden="true">→</i><span>Exit code</span><i aria-hidden="true">→</i><span>Metrics</span></div>
+                    <h3><a href="projects/ops-toolkit/">ops-toolkit</a></h3>
+                    <p>Small Bash checks for TLS expiry, disk and inode usage, SSH keys, and restic backups that work with Nagios-style monitoring or Prometheus.</p>
+                    <p class="project-evidence"><strong>In the repository</strong> bats tests with stubbed commands, shellcheck, a Nix package, and a NixOS module verified in a VM.</p>
+                    <div class="project-meta"><span>Bash · Prometheus · Nix</span><a href="https://github.com/4137314/ops-toolkit">Explore source <span aria-hidden="true">↗</span></a></div>
+                </article>
+            </div>
+        </section>
+
         <section id="education" class="education-section" aria-labelledby="education-title">
             <div class="container">
-                <div class="section-heading"><div><p class="eyebrow">02 / Academic foundations</p><h2 id="education-title">An electronics foundation.<br>A practical direction.</h2></div></div>
+                <div class="section-heading"><div><p class="eyebrow">03 / Academic foundations</p><h2 id="education-title">An electronics foundation.<br>A practical direction.</h2></div></div>
                 <div class="education-grid">
                     <div class="degree-summary">
                         <p class="degree-status">Bachelor’s degree · In progress</p>
@@ -130,7 +173,7 @@
         </section>
 
         <section id="about" class="section container" aria-labelledby="about-title">
-            <div class="section-heading"><div><p class="eyebrow">03 / Working approach</p><h2 id="about-title">A method, not a black box.</h2></div></div>
+            <div class="section-heading"><div><p class="eyebrow">04 / Working approach</p><h2 id="about-title">A method, not a black box.</h2></div></div>
             <p class="section-intro">University gives me the foundations; personal projects give me room to make decisions, investigate problems, and learn from the results. This is the approach I aim to bring to collaborations.</p>
             <div class="approach-grid">
                 <article><span class="project-number">01 / DEFINE</span><h3>Start with a clear scope</h3><p>Agree on the task, interfaces, and expected outcome. Be open about what I already know and what needs investigation.</p></article>
@@ -141,8 +184,8 @@
 
         <section id="contact" class="contact-section" aria-labelledby="contact-title">
             <div class="container contact-grid">
-                <div><p class="eyebrow">04 / Get in touch</p><h2 id="contact-title">Have a concrete<br>technical problem?</h2></div>
-                <div><p>I’m open to discussing small, well-defined collaborations in embedded software, digital design, or Linux tooling that fit my current experience and study commitments.</p><p>Send a short description of the task, the existing hardware or software, and the expected timeline. We can establish whether I’m a good fit before making commitments.</p>
+                <div><p class="eyebrow">05 / Get in touch</p><h2 id="contact-title">Have a concrete<br>technical problem?</h2></div>
+                <div><p>I’m open to discussing small, well-defined collaborations in Linux server baselines, monitoring and backups, embedded software, or digital design that fit my current experience and study commitments.</p><p>If you’re evaluating one of the infrastructure projects above, I can help adapt it to your environment, for example a baseline review, a staged rollout, or monitoring setup.</p><p>Send a short description of the task, the existing hardware or software, and the expected timeline. We can establish whether I’m a good fit before making commitments.</p>
                     <div class="contact-links"><a class="button primary" href="mailto:mattia.fait.eng@gmail.com">Email me <span aria-hidden="true">↗</span></a><a class="button secondary" href="https://www.linkedin.com/in/mattia-f-402062447" rel="me">LinkedIn <span aria-hidden="true">↗</span></a></div>
                 </div>
             </div>

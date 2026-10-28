@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Prometheus, Alertmanager, Grafana, Loki, and blackbox_exporter with tested alert rules, for Docker Compose or NixOS.">
+    <title>observability-stack — Mattia Fait</title>
+    <link rel="stylesheet" href="../../config/projects.css">
+</head>
+<body>
+<main class="project-page container">
+    <a class="back-link" href="../../portfolio/">← Project portfolio</a>
+    <p class="eyebrow">Systems · Monitoring</p>
+    <h1>observability-stack</h1>
+    <p class="summary">Prometheus, Alertmanager, Grafana, Loki, and blackbox_exporter with tested alert rules, for Docker Compose or NixOS.</p>
+    <dl class="project-details">
+        <div><dt>Scope</dt><dd>Alerting for host availability, disks, memory, failed services, HTTP endpoints, certificates, and backup freshness.</dd></div>
+        <div><dt>Work</dt><dd>Alert rules and routing with inhibition, file-based target discovery, a provisioned fleet dashboard, a pinned Compose stack, and an equivalent NixOS module that shares the same rules and dashboards.</dd></div>
+        <div><dt>Verification</dt><dd>promtool unit tests exercise the alert rules, amtool validates routing, a NixOS VM test starts the whole stack and checks scraping and dashboard provisioning, and CI smoke-tests the Compose deployment.</dd></div>
+        <div><dt>Tools</dt><dd>Prometheus, Alertmanager, Grafana, Loki, Docker Compose, NixOS.</dd></div>
+    </dl>
+    <p class="project-links"><a href="https://github.com/4137314/observability-stack">Source repository ↗</a><a href="https://github.com/4137314/portfolio">Portfolio index ↗</a></p>
+</main>
+</body>
+</html>
